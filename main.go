@@ -13,13 +13,12 @@ func main() {
 
 	c := cron.New()
 
-	c.AddFunc("*/5 * * * *", func() {
-		fmt.Println("Running test notifier every 5 minutes...")
+	c.AddFunc("*/1 * * * *", func() {
+		fmt.Println("Running test notifier every minute...")
 		jobs.NotifyUsers(cfg)
 	})
 
 	c.Start()
 
-	// Keep server alive
 	select {}
 }

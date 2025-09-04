@@ -12,8 +12,8 @@ import (
 type FoodItem struct {
 	ID         int    `json:"id"`
 	Name       string `json:"name"`
-	Quantity   int    `json:"quantity"`
-	ExpiryDate string `json:"expiry_date"` // 👈 string rakha, time.Time nahi
+	Quantity   string `json:"quantity"`
+	ExpiryDate string `json:"expiry_date"`
 	UserID     string `json:"user_id"`
 }
 

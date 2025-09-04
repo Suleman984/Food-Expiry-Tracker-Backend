@@ -25,7 +25,7 @@ func NotifyUsers(cfg config.Config) {
 		}
 
 		subject := fmt.Sprintf("Expiry Alert: %s", item.Name)
-		body := fmt.Sprintf("Your item '%s' (Qty: %d) is expiring on %s. Please use it before expiry!",
+		body := fmt.Sprintf("Your item '%s' (Qty: %s) is expiring on %s. Please use it before expiry!",
 			item.Name, item.Quantity, item.ExpiryDate)
 
 		if err := services.SendEmail(cfg, email, subject, body); err != nil {
